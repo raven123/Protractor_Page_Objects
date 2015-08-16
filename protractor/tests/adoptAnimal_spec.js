@@ -3,6 +3,8 @@ describe('Creating tests for animal adoption',function(){
 	var selectAnimalPage=require('../pages/SelectAnimalPage.js');
 	var confirmationPage=require('../pages/ConfirmationPage.js');
 	var adopteeName='John Doe';
+	var animalName='Simba the Lion';
+	
 	beforeEach(function(){
 	browser.get('http://thetestroom.com/jswebapp/');
 	homePage.verifyPageHeader();	
@@ -28,16 +30,19 @@ describe('Creating tests for animal adoption',function(){
 			
 			var dynamicText=homePage.getDynamicText();
 			
+			//asserting adopteeName with the dynamic text 
 			expect(dynamicText).toEqual(adopteeName);
 			
 			homePage.clickContinueButton();
 			
+			//verify select Animal Page elements before interactions
 			selectAnimalPage.verifyPageHeader();
 			
-			selectAnimalPage.selectAnimalToAdopt('');
+			selectAnimalPage.selectAnimalToAdopt(animalName);
 			
 			selectAnimalPage.clickContinueButton();
 			
+			//validate Confirmation Page elements
 			confirmationPage.validateConfirmationPage();
 			});
 	});
