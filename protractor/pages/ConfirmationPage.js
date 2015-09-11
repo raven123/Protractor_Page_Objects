@@ -10,5 +10,6 @@ var ConfirmationPage = function() {
 	expect(confirmationMessage.getText()).toContain(confirmationMessageText);
 	expect(backToHomeButton);
   };
+ 
 };
 module.exports=new ConfirmationPage();

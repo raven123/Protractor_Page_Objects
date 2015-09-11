@@ -1,3 +1,5 @@
+return require('../pages/ConfirmationPage.js');
+
 var SelectAnimalPage = function() {
   var pageHeader = element(by.css('div.ng-scope'));
   var selectAnimalList=element.all(by.css('.ng-pristine option'));
@@ -23,6 +25,8 @@ var SelectAnimalPage = function() {
   
   this.clickContinueButton=function(){
 	continueButton.click();  
+	browser.waitForAngular();
+	return require('./ConfirmationPage.js');
   };
   
   this.clickBackButton=function(){

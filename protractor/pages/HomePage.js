@@ -1,3 +1,5 @@
+require('../pages/SelectAnimalPage.js');
+
 var HomePage = function() {
   var pageHeader = element(by.css('div.ng-scope'));
   var textBox = element(By.css('input.ng-pristine'));
@@ -14,7 +16,8 @@ var HomePage = function() {
   };
   
   this.clickContinueButton=function(){
-	continueButton.click();  
+	continueButton.click(); 
+    return require('./SelectAnimalPage.js');
   };
   
    this.verifyPageHeader = function() {
@@ -22,4 +25,4 @@ var HomePage = function() {
   };
   
 };
-module.exports=new HomePage();
+module.exports= new HomePage();
